@@ -200,29 +200,36 @@ footer{background:#121d33;color:#c3c9d4;padding:44px 0 96px;font-size:13px}
   .sp-cta .t{background:var(--orange)}.sp-cta .l{background:var(--green)}
 }
 
-/* PowerPoint style entrance: fly-in / wipe / zoom（B・C案に近い強さ） */
-[data-anim]{opacity:0;transition:opacity .9s cubic-bezier(.2,.7,.3,1),transform .9s cubic-bezier(.2,.7,.3,1)}
-[data-anim="up"]{transform:translateY(70px)}
-[data-anim="left"]{transform:translateX(-90px)}
-[data-anim="right"]{transform:translateX(90px)}
-[data-anim="zoom"]{transform:scale(.85)}
+/* PowerPoint style entrance: fade / fly-in / zoom（控えめ） */
+[data-anim]{opacity:0;transition:opacity .75s ease-out,transform .75s cubic-bezier(.2,.7,.3,1)}
+[data-anim="up"]{transform:translateY(36px)}
+[data-anim="left"]{transform:translateX(-48px)}
+[data-anim="right"]{transform:translateX(48px)}
 [data-anim].show{opacity:1;transform:none}
-/* 写真：左からワイプで現れ、少し引きのズーム */
-[data-anim] figure,[data-anim].ph>img{clip-path:inset(0 100% 0 0);transition:clip-path 1s cubic-bezier(.6,0,.2,1) .25s}
-[data-anim] figure img,[data-anim].ph>img{transform:scale(1.18);transition:transform 1.8s cubic-bezier(.2,.7,.3,1) .25s,clip-path 1s cubic-bezier(.6,0,.2,1) .25s}
-[data-anim].show figure,[data-anim].show.ph>img{clip-path:inset(0 0 0 0)}
+/* 写真：フェードと同時に、少し寄った状態から元の大きさへ */
+[data-anim] figure img,[data-anim].ph>img{transform:scale(1.07);transition:transform 1.2s cubic-bezier(.2,.7,.3,1)}
 [data-anim].show figure img,[data-anim].show.ph>img{transform:none}
-/* 見出し：下から → 説明文はあとからフェード */
-.ttl[data-anim] p{opacity:0;transition:opacity .8s ease .45s}
+/* 見出しの説明文は少し遅れてフェード */
+.ttl[data-anim] p{opacity:0;transition:opacity .7s ease .3s}
 .ttl[data-anim].show p{opacity:1}
-/* ヒーロー：写真がゆっくり引き、白い枠は左からスライドイン */
-.hero .slide img{transform:scale(1.12);transition:transform 6s ease-out}
+/* ヒーロー写真：切り替わるときにわずかに引く */
+.hero .slide img{transform:scale(1.04);transition:transform 5s ease-out}
 .hero .slide.on img{transform:none}
-.hero-box[data-anim="left"]{transition-delay:.3s}
+.hero-box[data-anim="left"]{transition-delay:.2s}
 /* スマホ下の電話・LINE：読み込み後に下からスライドイン */
-@media (max-width:760px){.sp-cta{transform:translateY(100%);transition:transform .7s cubic-bezier(.2,.7,.3,1) .8s}.sp-cta.show{transform:none}}
-/* カードの写真：マウスを乗せると少し寄る */
-@media (hover:hover){.pol article figure img,.course article figure img,.ev article figure img{transition:transform 1.8s cubic-bezier(.2,.7,.3,1) .25s}.pol article.show:hover figure img,.course article.show:hover figure img,.ev article.show:hover figure img{transform:scale(1.06);transition:transform .5s ease}}
+@media (max-width:760px){.sp-cta{transform:translateY(100%);transition:transform .6s ease-out .6s}.sp-cta.show{transform:none}}
+
+/* 鳴らせる鍵盤（C案から） */
+.kb-wrap{max-width:620px;margin:64px auto 0;text-align:center}
+.kb-cap{font-weight:bold;font-size:16px;margin:0 0 14px}
+.kb{position:relative;height:150px;display:flex;user-select:none;-webkit-user-select:none;touch-action:manipulation}
+.kb .w{flex:1;background:#fff;border:1px solid var(--navy);border-left:0;cursor:pointer;position:relative;transition:background .1s}
+.kb .w:first-child{border-left:1px solid var(--navy)}
+.kb .w.on{background:#fde3c8}
+.kb .b{position:absolute;top:0;height:60%;background:#111;cursor:pointer;z-index:2;transition:background .1s}
+.kb .b.on{background:var(--orange)}
+.kb .w span{position:absolute;bottom:8px;left:0;right:0;font-size:10px;color:var(--sub)}
+.kb-note{font-size:12px;color:#c9d1e0;margin:10px 0 0}
 </style>
 </head>
 <body>
@@ -413,6 +420,11 @@ footer{background:#121d33;color:#c3c9d4;padding:44px 0 96px;font-size:13px}
         <a class="way line" href="https://lin.ee/nwdocCs" target="_blank" rel="noopener" data-anim="up" data-delay="150"><small>LINEで友だち追加</small><b>LINEで相談する</b></a>
         <a class="way" href="mailto:hiroheart7210@gmail.com" data-anim="up" data-delay="300"><small>メール</small><b>メールで問い合わせ</b></a>
       </div>
+      <div class="kb-wrap" data-anim="up">
+        <p class="kb-cap">最後に、一音どうぞ。</p>
+        <div class="kb" id="kb" aria-label="鳴らせる鍵盤"></div>
+        <p class="kb-note">タップ（クリック）すると音が鳴ります。</p>
+      </div>
     </div>
   </section>
 </main>
@@ -444,6 +456,22 @@ document.querySelectorAll('#gnav a').forEach(a=>a.onclick=()=>hd.classList.remov
 const io=new IntersectionObserver(es=>es.forEach(e=>{if(!e.isIntersecting)return;const el=e.target;setTimeout(()=>el.classList.add('show'),+(el.dataset.delay||0));io.unobserve(el)}),{threshold:.15});
 document.querySelectorAll('[data-anim]').forEach(el=>io.observe(el));
 requestAnimationFrame(()=>document.getElementById('spCta').classList.add('show'));
+// playable keyboard (C4–E5)
+(()=>{const kb=document.getElementById('kb');
+ const names=['ド','レ','ミ','ファ','ソ','ラ','シ','ド','レ','ミ'];
+ const wMidi=[60,62,64,65,67,69,71,72,74,76];
+ const blacks=[[61,0],[63,1],[66,3],[68,4],[70,5],[73,7],[75,8]];
+ const W=wMidi.length;
+ wMidi.forEach((m,k)=>{const d=document.createElement('div');d.className='w';d.dataset.m=m;d.innerHTML='<span>'+names[k]+'</span>';kb.appendChild(d)});
+ blacks.forEach(([m,after])=>{const d=document.createElement('div');d.className='b';d.dataset.m=m;const w=100/W;d.style.left=`calc(${(after+1)*w}% - ${w*0.3}%)`;d.style.width=`${w*0.6}%`;kb.appendChild(d)});
+ let ac;
+ const play=m=>{ac=ac||new (window.AudioContext||window.webkitAudioContext)();const f=440*Math.pow(2,(m-69)/12),t=ac.currentTime;
+   const out=ac.createGain();out.gain.setValueAtTime(0,t);out.gain.linearRampToValueAtTime(.32,t+.008);out.gain.exponentialRampToValueAtTime(.12,t+.35);out.gain.exponentialRampToValueAtTime(.0008,t+2.6);
+   const lp=ac.createBiquadFilter();lp.type='lowpass';lp.frequency.setValueAtTime(f*7,t);lp.frequency.exponentialRampToValueAtTime(f*2,t+1.2);
+   out.connect(lp).connect(ac.destination);
+   [[1,1],[2,.42],[3,.18],[4,.09],[5,.05]].forEach(([h,a])=>{const o=ac.createOscillator(),g=ac.createGain();o.type=h===1?'triangle':'sine';o.frequency.value=f*h*(1+(h-1)*.0008);g.gain.value=a;o.connect(g).connect(out);o.start(t);o.stop(t+2.7)})};
+ kb.addEventListener('pointerdown',e=>{const k=e.target.closest('[data-m]');if(!k)return;play(+k.dataset.m);k.classList.add('on');setTimeout(()=>k.classList.remove('on'),200)});
+})();
 </script>
 </body>
 </html>
