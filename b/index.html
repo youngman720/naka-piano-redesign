@@ -1,0 +1,400 @@
+<!doctype html>
+<html lang="ja">
+<head>
+<meta charset="utf-8">
+<meta name="robots" content="noindex">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>なか音楽教室｜大阪市城東区放出・鶴見区今津のピアノ教室</title>
+<meta name="description" content="大阪市城東区諏訪（放出）・鶴見区今津のピアノ＆リトミック教室「なか音楽教室」。褒めて育てるをモットーに、幼児から大人まで一人ひとりに寄り添ったレッスンをしています。">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Lato:wght@300;400;700&display=swap" rel="stylesheet">
+<style>
+:root{
+  --green:#1d5a48; --green-d:#123d31; --black:#1a1a1a; --sub:#5f6368; --gray:#f3f4f4; --line:#d7dadb;
+  --mincho:"Hiragino Mincho ProN","Yu Mincho","YuMincho","HG明朝E",serif;
+  --gothic:"Hiragino Kaku Gothic ProN","Hiragino Sans","Yu Gothic Medium","YuGothic","Meiryo",sans-serif;
+  --latin:"Lato",sans-serif;
+}
+*{box-sizing:border-box}
+html{scroll-behavior:smooth;scroll-padding-top:80px}
+body{margin:0;background:#fff;color:var(--black);font-family:var(--gothic);font-size:15px;line-height:2}
+img{display:block;max-width:100%}
+a{color:inherit}
+.wrap{width:min(1080px,100% - 32px);margin-inline:auto}
+
+/* header */
+.hd{position:sticky;top:0;z-index:50;background:#fff;border-bottom:1px solid var(--line)}
+.hd-in{display:flex;align-items:center;height:72px;gap:28px}
+.logo{text-decoration:none;font-family:var(--mincho);font-size:22px;font-weight:600;line-height:1.2}
+.logo small{display:block;font-family:var(--gothic);font-size:11px;color:var(--sub);font-weight:normal}
+.gnav{margin-left:auto;display:flex;gap:24px;font-size:13.5px}
+.gnav a{text-decoration:none;transition:color .2s}
+.gnav a:hover{color:var(--green)}
+.hd-btn{background:var(--green);color:#fff;padding:9px 20px;font-size:13.5px;text-decoration:none;transition:background .2s}
+.hd-btn:hover{background:var(--green-d)}
+.menu-btn{display:none;margin-left:auto;width:46px;height:46px;border:1px solid var(--black);background:#fff;cursor:pointer}
+.menu-btn i{display:block;width:20px;height:1px;background:var(--black);margin:5px auto}
+@media (max-width:980px){
+  .gnav,.hd-btn{display:none}.menu-btn{display:block}
+  .hd.open .gnav{display:flex;flex-direction:column;gap:0;position:absolute;top:72px;left:0;right:0;background:#fff;padding:0 16px 16px;border-bottom:1px solid var(--line);font-size:15px}
+  .hd.open .gnav a{padding:14px 0;border-bottom:1px solid var(--line)}
+}
+
+/* hero */
+.hero{padding:56px 0 0}
+.hero-grid{display:grid;grid-template-columns:5fr 7fr;gap:48px;align-items:center}
+.hero h1{font-family:var(--mincho);font-weight:600;font-size:clamp(28px,3.8vw,44px);line-height:1.7;margin:0 0 20px}
+.hero .lead{color:var(--sub);margin:0 0 28px}
+.hero .facts{display:grid;grid-template-columns:repeat(3,1fr);border-top:2px solid var(--black)}
+.hero .facts div{padding:12px 8px 0 0}
+.hero .facts b{display:block;font-size:15px}
+.hero .facts small{color:var(--sub);font-size:12px}
+.hero-pic{position:relative;height:min(64vh,540px)}
+.hero-pic img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;opacity:0;transition:opacity 1.2s ease}
+.hero-pic img.on{opacity:1}
+@media (max-width:820px){.hero{padding-top:0}.hero-grid{grid-template-columns:1fr;gap:28px}.hero-pic{order:-1;height:auto;aspect-ratio:4/3;margin:0 -16px}}
+
+/* headings */
+section{padding:112px 0}
+.gray{background:var(--gray)}
+.hd2{display:flex;align-items:baseline;gap:18px;margin:0 0 48px;padding-bottom:14px;border-bottom:1px solid var(--black)}
+.hd2 h2{font-family:var(--mincho);font-weight:600;font-size:clamp(22px,2.6vw,30px);margin:0;line-height:1.4}
+.hd2 span{font-family:var(--latin);font-size:13px;color:var(--green);letter-spacing:.08em}
+@media (max-width:820px){section{padding:80px 0}}
+
+/* message */
+.msg{display:grid;grid-template-columns:7fr 5fr;gap:56px;align-items:start}
+.msg .q{font-family:var(--mincho);font-weight:600;font-size:clamp(20px,2.4vw,26px);line-height:1.8;margin:0 0 24px}
+.msg figure{margin:0}
+.msg figure img{width:100%;aspect-ratio:4/5;object-fit:cover;object-position:60% center}
+.iq{display:flex;gap:0;margin:24px 0 0;padding:0;list-style:none;border:1px solid var(--line)}
+.iq li{flex:1;text-align:center;padding:12px 6px;border-right:1px solid var(--line);font-size:12.5px;color:var(--sub)}
+.iq li:last-child{border-right:0}
+.iq b{display:block;font-family:var(--latin);font-size:22px;color:var(--green);font-weight:700}
+.more{display:inline-flex;align-items:center;gap:12px;margin-top:24px;text-decoration:none;font-size:14px;color:var(--green);font-weight:bold}
+.more::after{content:"";width:40px;height:1px;background:currentColor;transition:width .25s}
+.more:hover::after{width:60px}
+@media (max-width:820px){.msg{grid-template-columns:1fr}.msg figure{max-width:420px}}
+
+/* policy slider */
+.pol-top{display:flex;justify-content:space-between;align-items:end;gap:16px}
+.pol-top .hd2{flex:1}
+.arrows{display:flex;gap:8px;margin-bottom:48px}
+.arrows button{width:46px;height:46px;border:1px solid var(--black);background:#fff;cursor:pointer;font-size:16px;transition:background .2s,color .2s}
+.arrows button:hover:not(:disabled){background:var(--black);color:#fff}
+.arrows button:disabled{opacity:.3;cursor:default}
+.track{display:flex;gap:24px;overflow-x:auto;scroll-snap-type:x mandatory;scrollbar-width:none}
+.track::-webkit-scrollbar{display:none}
+.card{flex:0 0 calc((100% - 48px)/3);scroll-snap-align:start;background:#fff}
+.card figure{margin:0;aspect-ratio:4/3;overflow:hidden}
+.card img{width:100%;height:100%;object-fit:cover}
+.card .b{padding:20px 22px 26px}
+.card .no{font-family:var(--latin);font-size:13px;color:var(--green);font-weight:700}
+.card h3{font-family:var(--mincho);font-weight:600;font-size:19px;margin:2px 0 8px}
+.card p{margin:0;font-size:13.5px;line-height:1.9;color:var(--sub)}
+@media (max-width:900px){.card{flex-basis:calc((100% - 24px)/2)}}
+@media (max-width:560px){.card{flex-basis:85%}}
+
+/* lesson */
+.row{display:grid;grid-template-columns:1fr 1fr;gap:56px;align-items:center;margin-bottom:88px}
+.row:last-child{margin-bottom:0}
+.row.rev .pic{order:2}
+.row .pic{aspect-ratio:5/4;overflow:hidden}
+.row .pic img{width:100%;height:100%;object-fit:cover}
+.row .en{font-family:var(--latin);font-size:13px;color:var(--green);font-weight:700}
+.row h3{font-family:var(--mincho);font-weight:600;font-size:24px;margin:0 0 10px}
+.row ul{padding:0;margin:16px 0 0;list-style:none;border-top:1px solid var(--line)}
+.row li{padding:10px 0;border-bottom:1px solid var(--line);font-size:14px}
+.badge{display:inline-block;background:var(--black);color:#fff;font-size:11.5px;padding:0 10px;margin-left:10px;vertical-align:middle}
+.trio{display:grid;grid-template-columns:repeat(3,1fr);height:100%}
+.trio img{height:100%;object-fit:cover}
+@media (max-width:820px){.row{grid-template-columns:1fr;gap:24px;margin-bottom:64px}.row.rev .pic{order:0}}
+
+/* events */
+.events{background:var(--green);color:#fff}
+.events .hd2{border-color:#fff}.events .hd2 span{color:#bfe0d4}
+.ev-grid{display:grid;grid-template-columns:1fr 1fr;gap:40px}
+.ev figure{margin:0 0 18px;aspect-ratio:16/10;overflow:hidden}
+.ev figure img{width:100%;height:100%;object-fit:cover;object-position:center 30%}
+.ev .when{font-family:var(--latin);font-size:13px;color:#bfe0d4;font-weight:700}
+.ev h3{font-family:var(--mincho);font-weight:600;font-size:22px;margin:0 0 8px}
+.ev p{font-size:14px;margin:0;color:#e3efe9}
+@media (max-width:820px){.ev-grid{grid-template-columns:1fr}}
+
+/* voices */
+.vgrid{display:grid;grid-template-columns:repeat(3,1fr);gap:0;border-top:1px solid var(--line);border-left:1px solid var(--line)}
+.vgrid div{padding:26px 26px 22px;border-right:1px solid var(--line);border-bottom:1px solid var(--line)}
+.vgrid p{margin:0;font-family:var(--mincho);font-size:15.5px;line-height:1.95}
+.vgrid small{display:block;margin-top:10px;font-size:12px;color:var(--green)}
+@media (max-width:900px){.vgrid{grid-template-columns:1fr}}
+
+/* fee */
+.fee-grid{display:grid;grid-template-columns:1fr 1fr;gap:48px}
+.fee h3{font-family:var(--mincho);font-weight:600;font-size:21px;margin:0 0 10px}
+.fee dl{margin:0;border-top:2px solid var(--black)}
+.fee .r{display:flex;justify-content:space-between;align-items:baseline;gap:16px;padding:14px 0;border-bottom:1px solid var(--line)}
+.fee dt{font-size:14px}
+.fee dt small{display:block;color:var(--sub);font-size:12px;line-height:1.6}
+.fee dd{margin:0;text-align:right;font-size:13px}
+.fee dd b{font-family:var(--latin);font-size:24px;font-weight:700}
+.fee .note{font-size:12.5px;color:var(--sub);margin:12px 0 0;line-height:1.8}
+@media (max-width:820px){.fee-grid{grid-template-columns:1fr}}
+
+/* profile */
+.pf{display:grid;grid-template-columns:5fr 6fr;gap:64px;align-items:start}
+.pf .pic img{width:100%;aspect-ratio:3/4;object-fit:cover;object-position:28% center}
+.pf .name{font-family:var(--mincho);font-weight:600;font-size:28px;margin:0}
+.pf .name small{font-family:var(--gothic);font-weight:normal;font-size:13px;color:var(--sub);margin-right:12px}
+.pf .roman{font-family:var(--latin);font-size:12px;color:var(--sub);margin:0 0 24px}
+.pf blockquote{margin:28px 0;padding:20px 24px;background:var(--gray);border-left:3px solid var(--green);font-family:var(--mincho);font-size:17px;line-height:1.9}
+.pf .career{font-size:13px;color:var(--sub);padding-left:1.2em;margin:20px 0 0}
+@media (max-width:820px){.pf{grid-template-columns:1fr;gap:32px}.pf .pic{max-width:380px}}
+
+/* access */
+.acc{display:grid;grid-template-columns:1fr 1fr;gap:40px}
+.acc .map{aspect-ratio:4/3}
+.acc iframe{width:100%;height:100%;border:0}
+.acc h3{font-family:var(--mincho);font-weight:600;font-size:20px;margin:18px 0 4px}
+.acc p{margin:0;font-size:13.5px;color:var(--sub)}
+@media (max-width:820px){.acc{grid-template-columns:1fr}}
+
+/* contact */
+.contact{background:var(--black);color:#fff;text-align:center}
+.contact h2{font-family:var(--mincho);font-weight:600;font-size:clamp(22px,3vw,30px);margin:0 0 8px}
+.contact p{margin:0 0 40px;color:#bbb;font-size:14px}
+.cways{display:grid;grid-template-columns:repeat(3,1fr);gap:12px;max-width:880px;margin:0 auto}
+.cways a{border:1px solid #fff;padding:24px 12px;text-decoration:none;transition:background .2s,color .2s}
+.cways a:hover{background:#fff;color:var(--black)}
+.cways small{display:block;font-family:var(--latin);font-size:12px;color:#9ec9b9}
+.cways a:hover small{color:var(--green)}
+.cways b{font-size:18px}
+@media (max-width:700px){.cways{grid-template-columns:1fr}}
+
+footer{padding:40px 0;font-size:12px;color:var(--sub);border-top:1px solid var(--line)}
+.ft{display:flex;justify-content:space-between;gap:20px;flex-wrap:wrap;align-items:center}
+.ft nav{display:flex;gap:18px;flex-wrap:wrap}
+.ft nav a{text-decoration:none}
+
+/* PowerPoint style entrance: fade / wipe / fly-in */
+[data-anim]{opacity:0;transition:opacity .7s ease-out,transform .7s ease-out}
+[data-anim="up"]{transform:translateY(36px)}
+[data-anim="left"]{transform:translateX(-60px)}
+[data-anim="right"]{transform:translateX(60px)}
+[data-anim="wipe"]{opacity:1;clip-path:inset(0 100% 0 0);transition:clip-path .8s ease-out}
+[data-anim].show{opacity:1;transform:none;clip-path:inset(0 0 0 0)}
+</style>
+</head>
+<body>
+
+<header class="hd" id="hd">
+  <div class="wrap hd-in">
+    <a class="logo" href="#top"><small>放出・今津のピアノ＆リトミック教室</small>なか音楽教室</a>
+    <nav class="gnav" id="gnav">
+      <a href="#message">ごあいさつ</a><a href="#policy">大切にしていること</a><a href="#lesson">レッスン</a><a href="#events">イベント</a><a href="#voices">生徒さんの声</a><a href="#fee">料金</a><a href="#profile">講師</a><a href="#access">アクセス</a>
+    </nav>
+    <a class="hd-btn" href="#contact">体験レッスン</a>
+    <button class="menu-btn" id="menuBtn" aria-label="メニュー"><i></i><i></i><i></i></button>
+  </div>
+</header>
+
+<main id="top">
+  <div class="hero">
+    <div class="wrap hero-grid">
+      <div>
+        <h1 data-anim="up">ピアノで、<br>人間力と感性を<br>育てませんか。</h1>
+        <p class="lead" data-anim="up" data-delay="200">大阪市城東区 放出と鶴見区 今津の、<br>ピアノ＆リトミック教室です。</p>
+        <div class="facts" data-anim="up" data-delay="400">
+          <div><b>2歳〜大人</b><small>マンツーマン</small></div>
+          <div><b>体験 1,000円</b><small>ピアノ</small></div>
+          <div><b>2教室</b><small>放出・今津</small></div>
+        </div>
+      </div>
+      <div class="hero-pic" id="heroPic" data-anim="wipe">
+        <img class="on" src="../assets/img/teacher_play.jpg" alt="グランドピアノを弾く講師">
+        <img src="../assets/img/lesson.jpg" alt="レッスンの様子">
+        <img src="../assets/img/recital_group.jpg" alt="発表会の集合写真">
+      </div>
+    </div>
+  </div>
+
+  <section id="message">
+    <div class="wrap">
+      <div class="hd2" data-anim="up"><h2>ごあいさつ</h2><span>MESSAGE</span></div>
+      <div class="msg">
+        <div data-anim="left">
+          <p class="q">「ピアノって楽しい！」<br>「音楽って素敵！」</p>
+          <p>大阪市城東区諏訪（放出）と鶴見区今津で、ピアノ教室と親子リトミック教室をしています、中弘子です。</p>
+          <p>音楽の素晴らしさを伝えたい。音楽で人生を豊かにしてほしい。そんな想いで、楽しく笑顔でレッスンしています。小さなお子さまが多い教室ですが、大人の方も通ってくださっています。</p>
+          <p>ピアノを習うことで、学力だけでなく人間性も養われ、感受性や発想力が豊かになっていきます。</p>
+          <ul class="iq"><li><b>IQ</b>知能指数</li><li><b>EQ</b>こころの知能指数</li><li><b>HQ</b>人間性知能</li></ul>
+          <a class="more" href="#profile">講師の想いを読む</a>
+        </div>
+        <figure data-anim="right"><img src="../assets/img/hand.jpg" alt="鍵盤に手をのせる子ども" loading="lazy"></figure>
+      </div>
+    </div>
+  </section>
+
+  <section class="gray" id="policy">
+    <div class="wrap">
+      <div class="pol-top">
+        <div class="hd2" data-anim="up"><h2>教室が大切にしていること</h2><span>POLICY</span></div>
+        <div class="arrows"><button id="prev" aria-label="前へ">←</button><button id="next" aria-label="次へ">→</button></div>
+      </div>
+      <div class="track" id="track">
+        <article class="card" data-anim="up"><figure><img src="../assets/img/lesson.jpg" alt="講師と一緒にピアノを弾く女の子" loading="lazy"></figure><div class="b"><span class="no">01</span><h3>褒めて育てる</h3><p>子どもは誰でも褒められるとうれしいもの。「もっと上手に弾きたい！」とやる気もアップします。レッスンに来るのが楽しくなる内容で、一人ひとりに寄り添います。</p></div></article>
+        <article class="card" data-anim="up" data-delay="150"><figure><img src="../assets/img/duet.jpg" alt="連弾する講師と生徒" loading="lazy"></figure><div class="b"><span class="no">02</span><h3>表現力を養う</h3><p>楽譜どおりに弾くだけでなく、この曲をどう表現したいかを自分なりに考えて演奏する力を育てます。社会に出たときの自己アピール力にもつながります。</p></div></article>
+        <article class="card" data-anim="up" data-delay="300"><figure><img src="../assets/img/recital_stage.jpg" alt="発表会のステージ" loading="lazy"></figure><div class="b"><span class="no">03</span><h3>舞台を経験</h3><p>発表会とミニコンサートを年に一度ずつ。コンクールやオーディションへの出演も勧めています。強い心と自己肯定感を育てる経験です。</p></div></article>
+        <article class="card"><figure><img src="../assets/img/bouquet.jpg" alt="ピアノの上の花束" loading="lazy"></figure><div class="b"><span class="no">04</span><h3>継続は力なり</h3><p>音楽が癒しとなり、一生の友となるように。長く続けられるようサポートします。講師自身もセミナーや研修に参加し、日々研鑽を積んでいます。</p></div></article>
+        <article class="card"><figure><img src="../assets/img/goods.jpg" alt="レッスングッズ" loading="lazy"></figure><div class="b"><span class="no">05</span><h3>オンラインでも</h3><p>台風や豪雨、体調がすぐれない日も、Zoom・FaceTime・LINEビデオでレッスンを受けていただけます。</p></div></article>
+      </div>
+    </div>
+  </section>
+
+  <section id="lesson">
+    <div class="wrap">
+      <div class="hd2" data-anim="up"><h2>レッスン</h2><span>LESSON</span></div>
+      <div class="row">
+        <div class="pic" data-anim="wipe"><img src="../assets/img/lesson.jpg" alt="ピアノレッスン" loading="lazy"></div>
+        <div data-anim="right">
+          <span class="en">PIANO</span>
+          <h3>ピアノ</h3>
+          <p>年齢を問わず、一人ひとりのペースや目標に合わせたマンツーマンレッスン。大人の方には、日常から離れて練習に集中し、弾ける曲が増える喜びを感じていただいています。</p>
+          <ul><li>導入期はソルフェージュ（読む・聴く・歌う）を徹底し、テンポ感・リズム感の基礎を</li><li>2歳児さんから受けられる知育絶対音感コース</li><li>先生との連弾や、データに合わせたアンサンブル</li></ul>
+        </div>
+      </div>
+      <div class="row rev">
+        <div class="pic" data-anim="wipe"><img src="../assets/img/concours1.jpg" alt="コンクールに出場した生徒さん" loading="lazy" style="object-position:center 30%"></div>
+        <div data-anim="left">
+          <span class="en">COMPETITION</span>
+          <h3>コンクール・受験対策</h3>
+          <p>入賞にかかわらず、目標を決めて努力すること、あきらめない心、技術の向上と、得るものの多いコンクール。審査員の先生からの講評も次のレッスンに活かします。保護者の方とも相談しながら取り組みます。</p>
+          <ul><li>保育士・受験対策もしっかり指導します</li></ul>
+        </div>
+      </div>
+      <div class="row">
+        <div class="pic" data-anim="wipe"><div class="trio"><img src="../assets/img/rhythmic1.jpg" alt="" loading="lazy"><img src="../assets/img/rhythmic2.jpg" alt="" loading="lazy"><img src="../assets/img/rhythmic3.jpg" alt="" loading="lazy"></div></div>
+        <div data-anim="right">
+          <span class="en">RHYTHMIC</span>
+          <h3>親子リトミック「ひまわりっこ」<span class="badge">現在募集停止中</span></h3>
+          <p>脳がもっとも発達する3歳ごろまでに、音楽に反応して体を動かすことで、感じる心・創造力・想像力を育てます。1歳〜就園前のお子さまと保護者で参加する少人数グループです。</p>
+          <ul><li>季節のテーマやクラフト製作で、指先の感覚も</li><li>お誕生日会、クリスマス会などのイベントも</li></ul>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="events" id="events">
+    <div class="wrap">
+      <div class="hd2" data-anim="up"><h2>教室イベント</h2><span>EVENTS</span></div>
+      <div class="ev-grid">
+        <article class="ev" data-anim="up"><figure><img src="../assets/img/recital_group.jpg" alt="ピアノ発表会の集合写真" loading="lazy"></figure><span class="when">FEB. – MAR.</span><h3>ピアノ発表会</h3><p>年に一度、素敵な衣装で聴衆の前で演奏する晴れの舞台。憧れのクラシック曲を選び、この日のために一生懸命練習します。ご家族も楽しみにされています。</p></article>
+        <article class="ev" data-anim="up" data-delay="200"><figure><img src="../assets/img/minicon.jpg" alt="ミニコンサートの生徒さん" loading="lazy"></figure><span class="when">AUG.</span><h3>ミニコンサート</h3><p>放出教室での小さなコンサート。ポップスや流行りの曲など、弾きたい曲を優先します。後半はビンゴゲームでリラックス。生徒さん同士が仲良くなるきっかけにも。</p></article>
+      </div>
+    </div>
+  </section>
+
+  <section id="voices">
+    <div class="wrap">
+      <div class="hd2" data-anim="up"><h2>生徒さん・お母さまの声</h2><span>VOICES</span></div>
+      <div class="vgrid">
+        <div data-anim="up"><p>子どもの話を良く聞いてくれて、わからないところは優しく教えてくれます。</p><small>どんな先生ですか？</small></div>
+        <div data-anim="up" data-delay="150"><p>直前まで「やっぱり無理！」と言っていたのに、終わった後は「楽しかった！来年も出る」と笑顔でした。</p><small>発表会の感想</small></div>
+        <div data-anim="up" data-delay="300"><p>宿題ノートをつけるようになってから、自主的に練習するようになりました。</p><small>お家での様子</small></div>
+        <div data-anim="up"><p>常に学んで新しいことを吸収して、アウトプットしていっている先生、すごいです。</p><small>どんな先生ですか？</small></div>
+        <div data-anim="up" data-delay="150"><p>発表会の後、ピアノに火が付いたようで、帰ってからも遅くまで弾いていました。</p><small>発表会の感想</small></div>
+        <div data-anim="up" data-delay="300"><p>難しくなっても、ちゃんと努力をすればまた楽しくなるよ。</p><small>生徒 Hちゃん</small></div>
+      </div>
+    </div>
+  </section>
+
+  <section class="gray" id="fee">
+    <div class="wrap">
+      <div class="hd2" data-anim="up"><h2>料金</h2><span>FEE</span></div>
+      <div class="fee-grid">
+        <div class="fee" data-anim="up"><h3>ピアノ</h3><dl>
+          <div class="r"><dt>入会金</dt><dd><b>5,000</b>円</dd></div>
+          <div class="r"><dt>月謝<small>30分／回・年間40回（発表会を含む）</small></dt><dd><b>8,000</b>円</dd></div>
+          <div class="r"><dt>年間設備費</dt><dd><b>3,000</b>円</dd></div>
+          <div class="r"><dt>体験レッスン</dt><dd><b>1,000</b>円</dd></div>
+        </dl><p class="note">ご都合の悪い日はご相談のうえ振替できます。テキストは別途実費となります。</p></div>
+        <div class="fee" data-anim="up" data-delay="200"><h3>リトミック<span class="badge">現在募集停止中</span></h3><dl>
+          <div class="r"><dt>入会金</dt><dd><b>3,000</b>円</dd></div>
+          <div class="r"><dt>月謝<small>月3回・10:00〜10:50</small></dt><dd><b>3,000</b>円</dd></div>
+          <div class="r"><dt>対象</dt><dd>1歳〜就園前（親子で参加）</dd></div>
+          <div class="r"><dt>体験レッスン</dt><dd><b>500</b>円</dd></div>
+        </dl><p class="note">振替レッスンはできません。</p></div>
+      </div>
+    </div>
+  </section>
+
+  <section id="profile">
+    <div class="wrap">
+      <div class="hd2" data-anim="up"><h2>講師紹介</h2><span>PROFILE</span></div>
+      <div class="pf">
+        <div class="pic" data-anim="left"><img src="../assets/img/teacher_play.jpg" alt="講師 中弘子" loading="lazy"></div>
+        <div data-anim="right">
+          <p class="name"><small>講師</small>中 弘子</p>
+          <p class="roman">HIROKO NAKA</p>
+          <p>大阪生まれ。ピアノを始めたのは6歳の頃です。自分から始めたいと言ったのに、練習嫌いの生徒でした。そんな私を根気よく指導してくださった恩師に、今も師事しています。</p>
+          <p>結婚し、3人の男の子を育てながらもレッスンに通い続けました。その頃から想い続けていたのは、ピアノの素晴らしさをたくさんの子どもたちに伝えたいということ。息子の友人にピアノを教えたのをきっかけに、講師としての歩みが始まりました。</p>
+          <blockquote>「それでいいんだよ」「できたね」<br>褒められたときの表情は、みんなキラッと光ります。</blockquote>
+          <p>小さな自信を積み重ねることで、成長に大切な「自己肯定感」が育つと信じています。生徒さんの宝石を見つけるお手伝いができるよう、これからも精進してまいります。</p>
+          <ul class="career"><li>「スタジオメロディ」講師</li><li>リトミックイベント講師</li><li>デイサービスで唱歌・童謡の指導</li></ul>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="gray" id="access">
+    <div class="wrap">
+      <div class="hd2" data-anim="up"><h2>アクセス</h2><span>ACCESS</span></div>
+      <div class="acc">
+        <article data-anim="up"><div class="map"><iframe loading="lazy" title="放出教室の地図" src="https://maps.google.com/maps?q=%E5%A4%A7%E9%98%AA%E5%B8%82%E5%9F%8E%E6%9D%B1%E5%8C%BA%E8%AB%8F%E8%A8%AA1-18&z=16&output=embed"></iframe></div><h3>放出教室</h3><p>大阪市城東区諏訪1-18「レンタルスペースぱれっと」内<br>ピアノ：曜日・時間とも応相談</p></article>
+        <article data-anim="up" data-delay="200"><div class="map"><iframe loading="lazy" title="今津教室の地図" src="https://maps.google.com/maps?q=%E5%A4%A7%E9%98%AA%E5%B8%82%E9%B6%B4%E8%A6%8B%E5%8C%BA%E4%BB%8A%E6%B4%A5%E5%8C%974%E4%B8%81%E7%9B%AE12&z=16&output=embed"></iframe></div><h3>今津教室</h3><p>大阪市鶴見区今津北4丁目12<br>ピアノ：曜日・時間とも応相談（祝日休み）</p></article>
+      </div>
+    </div>
+  </section>
+
+  <section class="contact" id="contact">
+    <div class="wrap">
+      <h2 data-anim="up">体験レッスンのご案内</h2>
+      <p data-anim="up">お問い合わせ・体験のお申し込みは、お気軽にどうぞ。</p>
+      <div class="cways" data-anim="up" data-delay="200">
+        <a href="tel:09039433923"><small>TEL</small><b>090-3943-3923</b></a>
+        <a href="https://lin.ee/nwdocCs" target="_blank" rel="noopener"><small>LINE</small><b>友だち追加して相談</b></a>
+        <a href="mailto:hiroheart7210@gmail.com"><small>MAIL</small><b>メールで問い合わせ</b></a>
+      </div>
+    </div>
+  </section>
+</main>
+
+<footer>
+  <div class="wrap ft">
+    <a class="logo" href="#top" style="font-size:18px">なか音楽教室</a>
+    <nav><a href="#lesson">レッスン</a><a href="#fee">料金</a><a href="#profile">講師</a><a href="#access">アクセス</a><a href="https://ameblo.jp/n-h-piano/" target="_blank" rel="noopener">ブログ</a></nav>
+    <span>© なか音楽教室</span>
+  </div>
+</footer>
+
+<script>
+const reduce=false; // 動きは常に有効（OSのアニメーション設定がオフでも動かす）
+// menu
+const hd=document.getElementById('hd');
+document.getElementById('menuBtn').onclick=()=>hd.classList.toggle('open');
+document.querySelectorAll('#gnav a').forEach(a=>a.onclick=()=>hd.classList.remove('open'));
+// hero images: fade transition
+(()=>{if(reduce)return;const im=[...document.querySelectorAll('#heroPic img')];let i=0;
+ setInterval(()=>{im[i].classList.remove('on');i=(i+1)%im.length;im[i].classList.add('on')},5000)})();
+// entrance animations
+const io=new IntersectionObserver(es=>es.forEach(e=>{if(!e.isIntersecting)return;const el=e.target;setTimeout(()=>el.classList.add('show'),+(el.dataset.delay||0));io.unobserve(el)}),{threshold:.15});
+document.querySelectorAll('[data-anim]').forEach(el=>io.observe(el));
+// policy slider
+(()=>{const t=document.getElementById('track'),p=document.getElementById('prev'),n=document.getElementById('next');
+ const step=()=>t.querySelector('.card').offsetWidth+24;
+ const st=()=>{p.disabled=t.scrollLeft<4;n.disabled=t.scrollLeft+t.clientWidth>=t.scrollWidth-4};
+ p.onclick=()=>t.scrollBy({left:-step(),behavior:'smooth'});n.onclick=()=>t.scrollBy({left:step(),behavior:'smooth'});
+ t.addEventListener('scroll',st,{passive:true});st();})();
+</script>
+</body>
+</html>
