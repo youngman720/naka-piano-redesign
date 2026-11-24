@@ -106,8 +106,6 @@ section{padding:88px 0}
 .tag{display:inline-block;font-size:12px;font-weight:bold;padding:2px 10px;margin-bottom:10px}
 .tag.on{background:var(--orange);color:#fff}
 .tag.off{background:#e6e8eb;color:#555}
-.trio{position:absolute;inset:0;display:grid;grid-template-columns:repeat(3,1fr)}
-.trio img{width:100%;height:100%;object-fit:cover}
 .online{margin-top:32px;border:2px solid var(--navy);background:#fff;padding:20px 24px;display:flex;gap:20px;align-items:center}
 .online b{flex:none;background:var(--navy);color:#fff;padding:6px 14px;font-size:14px}
 .online p{margin:0;font-size:14.5px}
@@ -215,6 +213,11 @@ footer{background:#121d33;color:#c3c9d4;padding:44px 0 96px;font-size:13px}
 /* ヒーロー写真：切り替わるときにわずかに引く */
 .hero .slide img{transform:scale(1.04);transition:transform 5s ease-out}
 .hero .slide.on img{transform:none}
+/* 1枚目（楽譜と花）に元サイトの見出し文字をのせる */
+.hero .slide .cap{position:absolute;margin:0;color:#fff;font-weight:bold;text-align:center;line-height:1.45;font-size:clamp(24px,3vw,40px);text-shadow:0 1px 3px rgba(0,0,0,.55),0 0 18px rgba(0,0,0,.35);top:50%;transform:translateY(-50%);right:max(16px,calc((100% - 1100px)/2));width:min(46%,520px)}
+.hero .slide:first-child::before{content:"";position:absolute;inset:0;background:linear-gradient(to left,rgba(20,20,20,.42),rgba(20,20,20,.12) 70%);z-index:1}
+.hero .slide .cap{z-index:2}
+@media (max-width:640px){.hero .slide .cap{right:0;left:0;width:auto;font-size:24px}.hero .slide:first-child::before{background:rgba(20,20,20,.3)}}
 .hero-box[data-anim="left"]{transition-delay:.2s}
 /* スマホ下の電話・LINE：読み込み後に下からスライドイン */
 @media (max-width:760px){.sp-cta{transform:translateY(100%);transition:transform .6s ease-out .6s}.sp-cta.show{transform:none}}
@@ -253,7 +256,7 @@ footer{background:#121d33;color:#c3c9d4;padding:44px 0 96px;font-size:13px}
 <main id="top">
   <div class="hero" id="hero">
     <div class="ph">
-      <div class="slide on"><img src="../assets/img/score_flower.jpg" alt="楽譜とドライフラワー"></div>
+      <div class="slide on"><img src="../assets/img/score_flower.jpg" alt="楽譜とドライフラワー"><p class="cap">大阪市城東区放出<br>ピアノ教室<br>幼児リトミック教室<br>なか音楽教室</p></div>
       <div class="slide"><img src="../assets/img/hand.jpg" alt="鍵盤に手をのせる子ども"></div>
       <div class="slide"><img src="../assets/img/signboard.jpg?v=2" alt="なか音楽教室の看板"></div>
     </div>
@@ -301,21 +304,21 @@ footer{background:#121d33;color:#c3c9d4;padding:44px 0 96px;font-size:13px}
       <div class="ttl" data-anim="up"><h2>コース案内</h2></div>
       <div class="course">
         <article data-anim="up">
-          <figure><img src="../assets/img/lesson.jpg" alt="ピアノレッスン" loading="lazy"></figure>
+          <figure><img src="../assets/img/lesson_duet.jpg" alt="講師と生徒の連弾" loading="lazy" style="object-position:center 42%"></figure>
           <h3>ピアノ</h3>
           <div class="b"><span class="tag on">幼児〜大人</span>
             <ul><li>年齢を問わず、一人ひとりのペースと目標に合わせたマンツーマンレッスン</li><li>導入期はソルフェージュ（読む・聴く・歌う）を徹底し、リズム感などの基礎を育てます</li><li>先生との連弾や、データに合わせたアンサンブルも</li></ul>
             <a class="link" href="#fee">料金を見る</a></div>
         </article>
         <article data-anim="up" data-delay="150">
-          <figure><img src="../assets/img/goods.jpg" alt="レッスングッズで遊ぶ子ども" loading="lazy"></figure>
+          <figure><img src="../assets/img/concours_baten.jpg" alt="ベーテン音楽コンクール会場で表彰状を持つ生徒さん" loading="lazy" style="object-position:center 38%"></figure>
           <h3>知育絶対音感・コンクール</h3>
           <div class="b"><span class="tag on">2歳さんから</span>
             <ul><li>2歳児さんから受けられる知育絶対音感レッスンコース</li><li>コンクールレッスン。目標に向かって努力する力、あきらめない心を育てます</li><li>保育士・受験対策もしっかり指導します</li></ul>
             <a class="link" href="#contact">体験を申し込む</a></div>
         </article>
         <article data-anim="up" data-delay="300">
-          <figure><div class="trio"><img src="../assets/img/rhythmic1.jpg" alt="" loading="lazy"><img src="../assets/img/rhythmic2.jpg" alt="" loading="lazy"><img src="../assets/img/rhythmic3.jpg" alt="" loading="lazy"></div></figure>
+          <figure><img src="../assets/img/rhythmic2_hq.jpg" alt="フープを使ったリトミックの様子" loading="lazy"></figure>
           <h3>親子リトミック「ひまわりっこ」</h3>
           <div class="b"><span class="tag off">現在、募集を停止しています</span>
             <ul><li>1歳〜就園前のお子さまと保護者で参加する少人数グループ</li><li>リズムに合わせて体を動かし、感じる心・創造力を育てます</li><li>季節のクラフトやお誕生日会、クリスマス会も</li></ul>
