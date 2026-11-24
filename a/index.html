@@ -215,8 +215,6 @@ footer{background:#121d33;color:#c3c9d4;padding:44px 0 96px;font-size:13px}
 /* ヒーロー写真：切り替わるときにわずかに引く */
 .hero .slide img{transform:scale(1.04);transition:transform 5s ease-out}
 .hero .slide.on img{transform:none}
-/* 看板の写真は小さいので、PCでは拡大しすぎず右に寄せる */
-@media (min-width:641px){.hero .slide.fit{background:#2a2521}.hero .slide.fit img{object-fit:contain;object-position:right center}}
 .hero-box[data-anim="left"]{transition-delay:.2s}
 /* スマホ下の電話・LINE：読み込み後に下からスライドイン */
 @media (max-width:760px){.sp-cta{transform:translateY(100%);transition:transform .6s ease-out .6s}.sp-cta.show{transform:none}}
@@ -257,7 +255,7 @@ footer{background:#121d33;color:#c3c9d4;padding:44px 0 96px;font-size:13px}
     <div class="ph">
       <div class="slide on"><img src="../assets/img/score_flower.jpg" alt="楽譜とドライフラワー"></div>
       <div class="slide"><img src="../assets/img/hand.jpg" alt="鍵盤に手をのせる子ども"></div>
-      <div class="slide fit"><img src="../assets/img/signboard.jpg" alt="なか音楽教室の看板"></div>
+      <div class="slide"><img src="../assets/img/signboard.jpg" alt="なか音楽教室の看板"></div>
     </div>
     <div class="hero-box" data-anim="left">
       <p class="area">大阪市城東区 放出 ／ 鶴見区 今津</p>
